@@ -6,6 +6,7 @@ import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashMap;
@@ -102,6 +103,28 @@ public class XrayCloudConnector {
 		catch(Exception e) {
 			System.out.println(e.toString());
 		}
+	}
+	
+	public void publishResults() {
+		
+			// query xray to get feature of a test
+				HashMap<String,String> headerMap = new HashMap<String,String>();
+
+				headerMap.put("Content-Type", "application/json");
+				headerMap.put("Authorization", "Bearer "+accessToken);
+				
+				// read results
+				String body = new String();
+				try {
+					body = new String(Files.readAllBytes(Paths.get("target/report/cucumber.json")));
+				} catch(Exception e) {
+					System.out.println(e.toString());
+				}
+				System.out.println(body);
+
+				// post results to xray
+				Response response =given().headers(headerMap).body(body).log().all().post(jiraXrayUrl+"/api/v1/import/execution/cucumber");
+		
 	}
 
 }

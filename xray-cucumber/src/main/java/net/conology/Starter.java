@@ -10,7 +10,8 @@ public class Starter {
 				"a49df729a800d4936864b28f3aa2fcd6e519a62509376a624c9a30e1ec635142",
 				"https://xray.cloud.xpand-it.com");
 		
-		con.getGherkinFromTestCloud("TPT-8");
+		//con.getGherkinFromTestCloud("TPT-8");
+		con.publishResults();
 
 	}
 
