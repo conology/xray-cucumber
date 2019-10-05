@@ -31,15 +31,6 @@ public class XrayCloudConnector {
 
 	public void authenticateXrayCloud() {
 
-		// XRAY API URL
-		//String xrayUrl = "https://xray.cloud.xpand-it.com/api/v1/authenticate";
-
-		// XRAY Key a49df729a800d4936864b28f3aa2fcd6e519a62509376a624c9a30e1ec635142
-		//String client_secrect = "a49df729a800d4936864b28f3aa2fcd6e519a62509376a624c9a30e1ec635142";
-
-		// XRAY Customer ID 7D6A3E158E494C3F8DC9EC2BEBA00273
-		//String client_id = "7D6A3E158E494C3F8DC9EC2BEBA00273";
-
 		//POST authenticate
 		HashMap<String,String> headerMapAuth = new HashMap<String,String>();
 		headerMapAuth.put("Content-Type", "application/json");
@@ -126,5 +117,7 @@ public class XrayCloudConnector {
 				Response response =given().headers(headerMap).body(body).log().all().post(jiraXrayUrl+"/api/v1/import/execution/cucumber");
 		
 	}
+	
+	
 
 }

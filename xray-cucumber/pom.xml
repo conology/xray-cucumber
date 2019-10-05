@@ -6,7 +6,36 @@
   <name>xray-cucumber</name>
   <description>Fetch feature from xray and execute it with cucumber</description>
   
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.1.6.RELEASE</version>
+    <relativePath />
+  </parent>
+  
+  <!-- adding atlassian repository for jira rest api dependencies -->
+  <repositories>
+		<repository>
+	    	<id>atlassian-public</id>
+    		<url>https://packages.atlassian.com/maven/repository/public</url>
+		</repository>
+	</repositories>
+  
+  
   <dependencies>
+		
+		<!-- dependencies for sprint boot -->
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		
+		<!-- dependencies due to restassured&spring issue -->
+		<dependency>
+		   <groupId>io.rest-assured</groupId>
+		   <artifactId>rest-assured-all</artifactId>
+		   <version>4.0.0</version>
+		</dependency>
 		
 		<!--  dependencies for rest-assured -->
 		
@@ -51,6 +80,18 @@
 			<artifactId>cucumber-picocontainer</artifactId>
 			<version>RELEASE</version>
 			
+		</dependency>
+		
+		<!-- dependencies for jira rest client -->
+		<dependency>
+		    <groupId>com.atlassian.jira</groupId>
+		    <artifactId>jira-rest-java-client-core</artifactId>
+		    <version>4.0.0</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.atlassian.fugue</groupId>
+		    <artifactId>fugue</artifactId>
+		    <version>2.6.1</version>
 		</dependency>
    
   </dependencies>
