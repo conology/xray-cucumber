@@ -30,6 +30,12 @@
 		    <artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		
+		<!--  dependencies to use yaml config in spring -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+		
 		<!-- dependencies due to restassured&spring issue -->
 		<dependency>
 		   <groupId>io.rest-assured</groupId>
