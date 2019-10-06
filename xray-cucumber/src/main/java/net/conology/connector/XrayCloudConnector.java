@@ -15,7 +15,7 @@ import java.util.zip.ZipInputStream;
 
 import io.restassured.response.Response;
 
-public class XrayCloudConnector {
+public class XrayCloudConnector implements IXrayConnector {
 
 	private String client_id;
 	private String client_secret;
@@ -50,6 +50,7 @@ public class XrayCloudConnector {
 		this.accessToken = builder.toString();
 	}
 
+	@Override
 	public void getGherkinFromTestCloud(String id) {
 
 		// query xray to get feature of a test
@@ -96,6 +97,7 @@ public class XrayCloudConnector {
 		}
 	}
 	
+	@Override
 	public void publishResults() {
 		
 			// query xray to get feature of a test
