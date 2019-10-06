@@ -1,0 +1,15 @@
+connection:
+  jira:
+    cloud:
+      user: 
+      pass: 
+      url: https://conology.atlassian.com
+    server:
+      user: 
+      pass: 
+      url: https://jira.url
+  xray:
+    cloud:
+      user: 
+      pass: 
+      url: https://xray.cloud.xpand-it.com
