@@ -1,0 +1,11 @@
+{
+  "webhooks": [
+    {
+      "jqlFilter": "project = \"Telekom - TPT Automation\" and status = \"In Progress\"",
+      "events": [
+        "jira:issue_updated"
+      ]
+    }
+  ],
+  "url": "https://example.com/api/webhook/${issue.id}"
+}
